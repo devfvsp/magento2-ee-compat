@@ -8,11 +8,14 @@
         }
     ],
     "require": {
-        "magento/module-payment": ">= 100.3.0"
+        "magento/module-payment": "< 100.3.0"
     },
     "autoload": {
         "psr-4": {
             "Wirecard\\ElasticEngine\\": ""
-        }
+        },
+        "files": [
+            "preload.php"
+        ]
     }
 }
