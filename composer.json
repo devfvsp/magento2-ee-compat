@@ -1,12 +1,7 @@
 {
-    "name": "mbretter/magento2-compat",
-    "license": "BSD",
-    "authors": [
-        {
-            "name": "Michael Bretterklieber",
-            "email": "github@bretterklieber.com"
-        }
-    ],
+    "name": "wirecard/magento2-ee-compat",
+    "description": "Magento2 compatibility package for Wirecard Payment Processing Gateway",
+    "license": "GPL-3.0-only",
     "require": {
         "magento/module-payment": "< 100.3.0"
     },
