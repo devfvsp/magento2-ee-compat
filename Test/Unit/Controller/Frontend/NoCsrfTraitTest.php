@@ -29,27 +29,43 @@
  * Please do not use the plugin if you do not agree to these terms of use!
  */
 
-namespace Wirecard\ElasticEngine\Controller\Frontend;
+namespace Wirecard\ElasticEngine\Test\Unit\Controller\Frontend;
 
-use Magento\Framework\App\Request\InvalidRequestException;
+use PHPUnit\Framework\TestCase;
+use Wirecard\ElasticEngine\Controller\Frontend\NoCsrfTrait;
 use Magento\Framework\App\RequestInterface;
 
-trait NoCsrfTrait
+class NoCsrfTraitTest extends TestCase
 {
-    /**
-     * @inheritDoc
-     */
-    public function createCsrfValidationException(
-        RequestInterface $request
-    ): ?InvalidRequestException {
-        return null;
+    /** @var NoCsrfTrait */
+    protected $noCsrfTrait;
+
+    protected function setUp()
+    {
+        $this->noCsrfTrait = $this->getMockForTrait('Wirecard\ElasticEngine\Controller\Frontend\NoCsrfTrait');
     }
 
-    /**
-     * @inheritDoc
-     */
-    public function validateForCsrf(RequestInterface $request): ?bool
+    public function testCreateCsrfValidationException()
     {
-        return true;
+        /** @var RequestInterface $requestInterface */
+        $requestInterface = $this->getMockBuilder(RequestInterface::class)->setConstructorArgs([
+            [],
+            [],
+            '',
+            false
+        ])->getMock();
+        $this->assertNull($this->noCsrfTrait->createCsrfValidationException($requestInterface));
+    }
+
+    public function testValidateForCsrf()
+    {
+        /** @var RequestInterface $requestInterface */
+        $requestInterface = $this->getMockBuilder(RequestInterface::class)->setConstructorArgs([
+            [],
+            [],
+            '',
+            false
+        ])->getMock();
+        $this->assertTrue($this->noCsrfTrait->validateForCsrf($requestInterface));
     }
 }
