@@ -1,13 +1,25 @@
 {
-    "name": "wirecard/magento2-ee-compat",
-    "description": "Magento2 compatibility package for Wirecard Payment Processing Gateway",
-    "license": "GPL-3.0-only",
-    "require": {
-        "magento/module-payment": ">= 100.3.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Wirecard\\ElasticEngine\\": ""
-        }
+  "name": "wirecard/magento2-ee-compat",
+  "description": "Magento2 compatibility package for Wirecard Payment Processing Gateway",
+  "license": "GPL-3.0-only",
+  "require": {
+    "magento/module-payment": ">= 100.3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Wirecard\\ElasticEngine\\": ""
     }
+  },
+  "require-dev": {
+    "magento/community-edition": ">=2.3.0",
+    "friendsofphp/php-cs-fixer": "^2.14",
+    "phpunit/phpunit": "^7.5"
+  },
+  "scripts": {
+    "cs-check": "php-cs-fixer fix -v --dry-run --using-cache=no .",
+    "cs-fix": "php-cs-fixer fix .",
+    "test": "phpunit --colors=always",
+    "test-coverage": "phpunit --coverage-clover build/coverage/xml",
+    "test-reports": "phpunit --coverage-html reports/coverage --coverage-clover reports/clover.xml --coverage-crap4j reports/crap4j.xml --log-junit reports/junit.xml"
+  }
 }
