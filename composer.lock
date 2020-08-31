@@ -757,16 +757,16 @@
         },
         {
             "name": "magento/community-edition",
-            "version": "2.3.0",
+            "version": "2.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/magento/magento2.git",
-                "reference": "f4c1d7526f05bdfb1327b0701cc345f94aadcaed"
+                "reference": "7aa94564d85e408baea01abc5315a0441401c375"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/magento/magento2/zipball/f4c1d7526f05bdfb1327b0701cc345f94aadcaed",
-                "reference": "f4c1d7526f05bdfb1327b0701cc345f94aadcaed",
+                "url": "https://api.github.com/repos/magento/magento2/zipball/7aa94564d85e408baea01abc5315a0441401c375",
+                "reference": "7aa94564d85e408baea01abc5315a0441401c375",
                 "shasum": ""
             },
             "require": {
